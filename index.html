@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0a0e14">
+<meta name="format-detection" content="telephone=no">
+<title>最後一盞燈 V0.1</title>
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.svg">
+<link rel="apple-touch-icon" href="icon-192.svg">
+</head>
+<body>
+<div class="game">
+  <header>
+    <div>
+      <div class="eyebrow">SURVIVAL CHRONICLE · V0.1</div>
+      <h1>最後一盞燈</h1>
+      <p>太陽正在熄滅。你只有一座城，和不知道還剩多少時間。</p>
+    </div>
+    <div class="day"><span>DAY</span><b id="day">1</b></div>
+  </header>
+
+  <section class="resources">
+    <div class="card"><span>👥 人口</span><b id="people">1200</b></div>
+    <div class="card"><span>⚡ 能源</span><b id="energy">70</b></div>
+    <div class="card"><span>🍖 糧食</span><b id="food">75</b></div>
+    <div class="card"><span>🛡️ 軍力</span><b id="military">35</b></div>
+    <div class="card"><span>😊 民心</span><b id="morale">60</b></div>
+  </section>
+
+  <main>
+    <section class="map panel">
+      <div class="panel-title">曙光城 · 北境</div>
+      <div class="map-art">
+        <div class="sun">☼</div>
+        <div class="mountain">▲ ▲ ▲</div>
+        <div class="road"></div>
+        <button class="city" id="cityBtn">🏰<small>曙光城</small></button>
+        <button class="ruin" id="ruinBtn">🏚️<small>北方遺跡</small></button>
+        <div class="fog">？？？</div>
+      </div>
+      <div class="hint">世界會記住你的選擇。某些事件不會立刻顯現後果。</div>
+    </section>
+
+    <section class="event panel">
+      <div class="panel-title">今日事件</div>
+      <div id="eventBox" class="event-box"></div>
+      <div id="choices" class="choices"></div>
+<div class="rules"><b>🎯 目標</b>：撐過 30 天，找出黑暗的真相，或建立自己的生存道路。<br>你的選擇會累積線索、科技、軍力與民心，並決定最後結局。</div>
+      <div class="log-title">城市紀錄</div>
+      <div id="log" class="log"></div>
+    </section>
+  </main>
+
+  <footer>
+    <button class="secondary" id="reset">重新開始</button>
+    <span id="status">做出第一個決定。</span>
+  </footer>
+</div>
+<script src="game.js"></script>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js"));}</script>
+</body>
+</html>

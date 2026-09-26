@@ -1,0 +1,64 @@
+*{box-sizing:border-box}
+:root{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",sans-serif;color:#e9eef5;background:#0a0e14}
+body{margin:0;min-height:100vh;background:radial-gradient(circle at 70% 10%,#283044 0,#101621 35%,#070a0f 75%);padding:22px}
+.game{max-width:1100px;margin:auto}
+header{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:18px}
+.eyebrow{font-size:11px;letter-spacing:2px;opacity:.55}
+h1{font-size:36px;margin:6px 0 4px}
+p{margin:0;color:#aeb8c8}
+.day{border:1px solid #394354;border-radius:16px;padding:9px 17px;text-align:center;background:#111824}
+.day span{display:block;font-size:10px;letter-spacing:2px;color:#8e9bb0}.day b{font-size:30px}
+.resources{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:14px}
+.card,.panel{background:rgba(16,23,34,.9);border:1px solid #2b3545;border-radius:18px;box-shadow:0 12px 40px rgba(0,0,0,.18)}
+.card{padding:13px}.card span{font-size:12px;color:#9eabbe}.card b{display:block;font-size:22px;margin-top:5px}
+main{display:grid;grid-template-columns:1.15fr .85fr;gap:14px}
+.panel{overflow:hidden}.panel-title{padding:14px 16px;border-bottom:1px solid #2b3545;font-weight:700}
+.map-art{height:410px;position:relative;overflow:hidden;background:linear-gradient(#182338,#1b2834 52%,#17241e)}
+.sun{position:absolute;right:70px;top:42px;font-size:70px;color:#e9c46a;opacity:.85}
+.mountain{position:absolute;left:30px;top:120px;color:#35445b;font-size:75px;letter-spacing:-20px}
+.road{position:absolute;left:20%;bottom:0;width:60%;height:55%;background:linear-gradient(155deg,transparent 48%,#625b50 49%,#625b50 53%,transparent 54%);opacity:.5}
+.city,.ruin{position:absolute;border:0;background:transparent;color:white;cursor:pointer;font-size:46px;transition:.2s}
+.city{left:42%;bottom:27%}.ruin{right:12%;top:42%}
+.city:hover,.ruin:hover{transform:scale(1.12)}
+.city small,.ruin small{display:block;font-size:12px;background:#0b1018cc;padding:3px 7px;border-radius:8px}
+.fog{position:absolute;left:45%;top:35%;font-size:24px;color:#aab4c2;opacity:.45}
+.hint{padding:11px 15px;color:#8290a5;font-size:12px}
+.event-box{padding:18px 16px;min-height:170px}.event-box h2{margin:0 0 8px;font-size:23px}.event-box p{line-height:1.65;color:#cbd4e0}
+.choices{padding:0 16px 15px;display:grid;gap:8px}
+button.choice{border:1px solid #3a4658;background:#182131;color:#eaf0f7;border-radius:12px;padding:12px;text-align:left;cursor:pointer}
+button.choice:hover{background:#222e40;border-color:#65758e}
+.log-title{padding:10px 16px;border-top:1px solid #2b3545;font-size:12px;color:#8896aa}
+.log{height:112px;overflow:auto;padding:0 16px 12px;font-size:12px;color:#aeb8c8}.log div{padding:4px 0;border-bottom:1px solid #202a37}
+footer{display:flex;justify-content:space-between;align-items:center;margin-top:14px;color:#8290a5;font-size:12px}
+.secondary{background:transparent;color:#aeb8c8;border:1px solid #364152;border-radius:10px;padding:8px 12px;cursor:pointer}
+@media(max-width:760px){body{padding:12px}.resources{grid-template-columns:repeat(2,1fr)}main{grid-template-columns:1fr}.map-art{height:300px}h1{font-size:29px}.day{padding:7px 12px}}
+
+/* Safari / iPhone optimization */
+html{background:#0a0e14;-webkit-text-size-adjust:100%;text-size-adjust:100%;overscroll-behavior:none}
+body{
+  -webkit-tap-highlight-color:transparent;
+  -webkit-touch-callout:none;
+  overscroll-behavior-y:none;
+  min-height:100svh;
+  padding-top:max(12px, env(safe-area-inset-top));
+  padding-right:max(12px, env(safe-area-inset-right));
+  padding-bottom:max(12px, env(safe-area-inset-bottom));
+  padding-left:max(12px, env(safe-area-inset-left));
+}
+button{-webkit-appearance:none;appearance:none;touch-action:manipulation}
+button.choice{min-height:50px;font-size:16px}
+.city,.ruin{padding:10px}
+@media (max-width:760px){
+  .game{width:100%}
+  header{align-items:center}
+  header p{font-size:13px;line-height:1.4}
+  .resources{grid-template-columns:repeat(2,1fr)}
+  .card{min-height:72px}
+  main{grid-template-columns:1fr}
+  .map-art{height:300px}
+  .event-box{min-height:150px}
+  .choices{padding-bottom:18px}
+  footer{padding-bottom:2px}
+}
+
+.rules{margin:0 16px 16px;padding:11px 12px;border:1px solid #303b4c;border-radius:10px;color:#98a7ba;font-size:12px;line-height:1.6;background:#101823}.rules b{color:#d9e2ed}
